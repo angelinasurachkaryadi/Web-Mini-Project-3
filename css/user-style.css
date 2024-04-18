@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+
+
+
+.warna1 {
+    background-color: #D9D7F1;
+}
+.warna2 {
+    background-color: #FFFDDE;
+}
+.warna3 {
+    background-color: #E7FBBE;
+}
+ .warna4 {
+    background-color: #C2D9FF;
+}
+.banner{
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/bg-parfum.jpg');
+}
+.highlighted-kategori{
+    height: 250px;
+    border: solid #E7FBBE;
+    
+}
+.container {
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+.kategori-mykonos {
+    background: url('../img/logo-mykonos.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.kategori-saffnco {
+    background: url('../img/logo-saffnco.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.kategori-kitschy {
+    background: url('../img/logo-kitschy.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.kategori-onix {
+    background: url('../img/logo-onix.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.kategori-vs {
+    background: url('../img/logo-vs.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.kategori-zara {
+    background: url('../img/logo-zara.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.no-decoration {
+    text-decoration: none;
+    color: #FF6868;
+}
+.no-decoration:hover{
+    color: #190482;
+}
+.textharga{
+    font-size: 20px;
+    color:#190482;
+}
+.image-box {
+    height: 250px;
+}
+.image-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}

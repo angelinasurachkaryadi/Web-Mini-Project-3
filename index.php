@@ -4,13 +4,21 @@
 
 session_start();
 
+// Inisialisasi variabel error untuk pesan kesalahan login
+$login_error = '';
+
 if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = ($_POST['password']);
-   $cpass = ($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
+   // Memeriksa apakah kunci 'name' ada dalam array $_POST sebelum mengaksesnya
+   $name = isset($_POST['name']) ? mysqli_real_escape_string($conn, $_POST['name']) : '';
+   // Memeriksa apakah kunci 'email' ada dalam array $_POST sebelum mengaksesnya
+   $email = isset($_POST['email']) ? mysqli_real_escape_string($conn, $_POST['email']) : '';
+   // Memeriksa apakah kunci 'password' ada dalam array $_POST sebelum mengaksesnya
+   $pass = isset($_POST['password']) ? $_POST['password'] : '';
+   // Memeriksa apakah kunci 'cpassword' ada dalam array $_POST sebelum mengaksesnya
+   $cpass = isset($_POST['cpassword']) ? $_POST['cpassword'] : '';
+   // Memeriksa apakah kunci 'user_type' ada dalam array $_POST sebelum mengaksesnya
+   $user_type = isset($_POST['user_type']) ? $_POST['user_type'] : '';
 
    $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
 
@@ -33,7 +41,8 @@ if(isset($_POST['submit'])){
       }
      
    }else{
-      $error[] = 'email atau password anda salah!';
+      // Atur pesan kesalahan untuk login yang gagal
+      $login_error = 'Email atau password Anda salah!';
    }
 
 };
@@ -58,15 +67,14 @@ if(isset($_POST['submit'])){
    <form action="" method="post">
       <h3>Login</h3>
       <?php
-      if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
-         };
+      // Tampilkan pesan kesalahan jika login gagal
+      if(!empty($login_error)){
+         echo '<span class="error-msg">'.$login_error.'</span>';
       };
       ?>
-      <input type="email" name="email" required placeholder="masukkan email">
-      <input type="password" name="password" required placeholder="masukkan password">
-      <input type="submit" name="submit" value="login sekarang" class="form-btn">
+      <input type="email" name="email" required placeholder="Masukkan email">
+      <input type="password" name="password" required placeholder="Masukkan password">
+      <input type="submit" name="submit" value="Login Sekarang" class="form-btn">
       <p>Belum punya akun? <a href="registrasi.php">Registrasi Sekarang</a></p>
    </form>
 

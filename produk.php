@@ -48,12 +48,12 @@ session_start();
         }
         .table th,
         .table td {
-            padding: 10px; /* Penyesuaian padding agar lebih luas */
-            word-wrap: break-word; /* Pemecahan kata jika konten terlalu panjang */
+            padding: 10px; 
+            word-wrap: break-word; 
         }
         .table img {
-            max-width: 100%; /* Membatasi lebar gambar agar tidak melebihi kolom */
-            height: auto; /* Biarkan tinggi gambar disesuaikan secara otomatis */
+            max-width: 100%; 
+            height: auto; 
         }
     </style>
     <div class="section">
